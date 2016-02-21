@@ -1,4 +1,4 @@
-var gulp = require('gulp');
+var gulp = require('gulp');	
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 
@@ -8,7 +8,7 @@ var baseDestDir = 'static';
 gulp.task('sass', function () {
     gulp.src(baseSrcDir + '/scss/*.scss')
         .pipe(sass())
-        .pipe(gulp.dest(baseSrcDir + '/css'));
+        .pipe(gulp.dest(baseDestDir + '/css'));
 });
 
 gulp.task('copy-foundation-styles', function() {
@@ -37,6 +37,6 @@ gulp.task('concat-js', function() {
 		.pipe(gulp.dest(baseDestDir + '/js'));
 });
 
-gulp.task('default', function() {
+gulp.task('default', ['sass', 'concat-js'], function() {
 	gulp.start('watch');
 });

@@ -6,5 +6,7 @@ from .models import Fiddle
 
 
 class FiddleForm(FoundationModelForm):
-    model = Fiddle
-    fields = ('context', 'template',)
+
+    class Meta:
+        model = Fiddle
+        fields = ('context', 'template',)

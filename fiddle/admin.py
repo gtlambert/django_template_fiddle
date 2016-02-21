@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Fiddle
+
+class FiddleAdmin(admin.ModelAdmin):
+    list_display = ['id', 'context', 'template']
+
+
+admin.site.register(Fiddle, FiddleAdmin)

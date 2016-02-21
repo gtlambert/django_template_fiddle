@@ -16,6 +16,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'fiddle',
+    'crispy_forms',
+    'crispy_forms_foundation',
 )
 
 MIDDLEWARE_CLASSES = (

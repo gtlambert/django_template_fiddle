@@ -1,16 +1,35 @@
 {% load staticfiles %}
+{% load crispy_forms_tags %}
 
 <!DOCTYPE html>
 <html>
 	<head>
 		<link rel="stylesheet" href="{% static 'css/foundation.min.css' %}">
+		<link rel="stylesheet" href="{% static 'css/main.css' %}">
 	</head>
 	<body>
 		<nav class="top-bar">
-			<ul>
-				<li>DjangoTemplateFiddle</li>
+			<h4 class="left">DjangoTemplateFiddle</h2>
+			<ul class="right">
+				<li>Fork Me on Github</li>
+				<li>Share</li>
 			</ul>
 		</nav>
+
+		<div class="container">
+			<div class="large-6 columns">
+				<form action="" method="POST">
+					{% crispy form form.helper %}
+				</form>
+			</div>
+			<div class="large-6 columns">
+				<div class="panel">
+					{% autoescape off %}
+						{{ fiddle_template }}
+					{% endautoescape %}
+				</div>
+			</div>
+		</div>
 	</body>
 
 </html>
